@@ -8,7 +8,8 @@ from .models import ToDo
 
 def index(request):
 	todos = ToDo.objects.all()
-	return render(request, 'todo/index.html', {'todolist': todos, 'title': 'Главная страница'})
+	print(todos)
+	return render(request, 'todo/index.html', {'todo_list': todos, 'title': 'Главная страница'})
 
 @require_http_methods(['POST'])
 @csrf_exempt
